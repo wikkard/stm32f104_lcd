@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component>
+    <api>
+        <prop name="text" type="string" default="Button"/>
+    </api>
+    <view extends="lv_button" height="38" scrollable="false">
+        <style name="style_button"/>
+        <style name="style_button_pressed" selector="pressed"/>
+        <lv_label text="$text" align="center" clickable="false">
+            <style name="style_label"/>
+        </lv_label>
+    </view>
+</component>

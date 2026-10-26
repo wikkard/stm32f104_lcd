@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  First-target visual snapshot. Firmware moves the cross to (24,24), (295,24),
+  (24,215), then (160,120), moving the prompt to y=146 for the center target.
+  First startup changes the heading and hides Cancel. Do not move the target
+  positions or Cancel region independently of the calibration controller.
+-->
+<screen>
+    <view width="320" height="240" scrollable="false">
+        <style name="style_screen"/>
+        <lv_label name="calibration_heading" x="10" y="40" width="300"
+                  text="Recalibrate touch"/>
+        <lv_label name="calibration_prompt" x="10" y="68" width="300"
+                  style_text_align="center"
+                  text="Calibration 1/4&#10;Hold cross, then release."/>
+        <lv_obj name="marker_horizontal" x="15" y="23" width="19" height="3"
+                clickable="false" scrollable="false">
+            <style name="style_calibration_marker"/>
+        </lv_obj>
+        <lv_obj name="marker_vertical" x="23" y="15" width="3" height="19"
+                clickable="false" scrollable="false">
+            <style name="style_calibration_marker"/>
+        </lv_obj>
+        <action_button name="cancel_button" x="110" y="194" width="100" text="Cancel">
+            <screen_create_event screen="settings_screen" trigger="clicked"/>
+        </action_button>
+    </view>
+</screen>

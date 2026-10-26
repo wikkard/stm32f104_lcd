@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Editable visual snapshot of app_lvgl.c, not a replacement firmware entry point.
+  Open this folder in LVGL Pro Editor. For viewer.lvgl.io, publish this folder
+  to a repository you choose, then supply its GitHub folder URL. The viewer
+  requires project.xml and globals.xml; nothing is uploaded automatically here.
+
+  Open screens/main_screen.xml first. Other screens can be opened individually.
+  screen_create_event elements provide browser-preview navigation only.
+
+  After editing, export C/H for LVGL 9.4 and integrate the generated view
+  constructors into app_lvgl.c. Keep its foreground action dispatch, pointer
+  release gating, calibration service, safe flash storage, and timer cleanup.
+  Replace preview navigation with firmware action callbacks before integration:
+    settings_button      -> ACTION_SETTINGS
+    recalibrate_button   -> ACTION_CALIBRATE
+    version_button       -> ACTION_VERSION
+    settings_back_button -> ACTION_MAIN
+    version_back_button  -> ACTION_SETTINGS
+    cancel_button        -> ACTION_CANCEL
+    retry_button         -> ACTION_RETRY
+    session_button       -> ACTION_SESSION
+
+  Firmware supplies counter_label, calibration_status, calibration_prompt,
+  marker positions, save_error_detail and firmware_version_label dynamically.
+  Calibration/saving/error screens are visual previews, not browser simulations
+  of touch acquisition or persistence. Cancel is hidden on first-start calibration.
+  Keep each generated screen's timers/object references scoped to its lifetime.
+
+  Generated C is preferred on STM32: LV_USE_XML may remain 0. Do not call lv_init
+  a second time, replace hardware ports, or enable XML/asset filesystems merely
+  to integrate exported C. More complex widgets/fonts need matching lv_conf.h
+  settings and a fresh RAM/flash budget check.
+
+  Documentation:
+    https://lvgl.io/docs/pro/online-viewer
+    https://lvgl.io/docs/pro/integration/using-exported-c-code
+-->
+<project name="ledtest_ui" lvgl_version="9.4.0" theme="simple">
+    <targets>
+        <target name="stm32f103_lcd">
+            <display width="320" height="240"/>
+        </target>
+    </targets>
+</project>

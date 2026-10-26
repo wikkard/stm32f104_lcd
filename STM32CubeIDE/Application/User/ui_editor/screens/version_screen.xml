@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen>
+    <view width="320" height="240" scrollable="false">
+        <style name="style_screen"/>
+        <lv_label name="title_label" x="10" y="24" width="300" text="Firmware Version"/>
+        <lv_label name="firmware_version_label" x="10" y="74" width="300"
+                  text="#firmware_version"/>
+        <lv_label name="hardware_label" x="10" y="110" width="300"
+                  text="STM32F103ZGT6 / LVGL"/>
+        <action_button name="version_back_button" x="90" y="174" width="140" text="Back">
+            <screen_create_event screen="settings_screen" trigger="clicked"/>
+        </action_button>
+    </view>
+</screen>

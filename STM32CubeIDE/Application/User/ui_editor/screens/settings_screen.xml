@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen>
+    <view width="320" height="240" scrollable="false">
+        <style name="style_screen"/>
+        <lv_label name="title_label" x="10" y="12" width="300" text="Settings"/>
+        <action_button name="recalibrate_button" x="40" y="46" width="240"
+                       text="Recalibrate Touch">
+            <!-- Preview only: firmware must enter its raw calibration controller. -->
+            <screen_create_event screen="calibration_screen" trigger="clicked"/>
+        </action_button>
+        <action_button name="version_button" x="40" y="96" width="240"
+                       text="Firmware Version">
+            <screen_create_event screen="version_screen" trigger="clicked"/>
+        </action_button>
+        <action_button name="settings_back_button" x="40" y="146" width="240" text="Back">
+            <screen_create_event screen="main_screen" trigger="clicked"/>
+        </action_button>
+        <lv_label name="calibration_status" x="10" y="210" width="300"
+                  text="Calibration: saved"/>
+    </view>
+</screen>

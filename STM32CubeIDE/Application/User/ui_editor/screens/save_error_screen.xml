@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen>
+    <view width="320" height="240" scrollable="false">
+        <style name="style_screen"/>
+        <lv_label name="title_label" x="10" y="12" width="300" text="Calibration save error"/>
+        <lv_label name="save_error_detail" x="10" y="42" width="300" text="Flash erase failed"/>
+        <lv_label name="saved_data_status" x="10" y="72" width="300"
+                  text="Previous saved data is retained."/>
+        <action_button name="retry_button" x="40" y="108" width="240" text="Retry">
+            <!-- Preview only: firmware queues a foreground transactional save. -->
+            <screen_create_event screen="saving_screen" trigger="clicked"/>
+        </action_button>
+        <action_button name="session_button" x="40" y="158" width="240"
+                       text="Use for this session">
+            <!-- Firmware also updates calibration_status to save unconfirmed. -->
+            <screen_create_event screen="main_screen" trigger="clicked"/>
+        </action_button>
+    </view>
+</screen>

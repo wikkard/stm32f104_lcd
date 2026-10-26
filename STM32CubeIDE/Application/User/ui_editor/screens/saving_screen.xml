@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Firmware enters/exits this screen; the viewer never writes device flash. -->
+<screen>
+    <view width="320" height="240" scrollable="false">
+        <style name="style_screen"/>
+        <lv_label name="saving_label" x="20" y="80" width="280"
+                  text="Saving calibration...&#10;Do not remove power."/>
+    </view>
+</screen>
